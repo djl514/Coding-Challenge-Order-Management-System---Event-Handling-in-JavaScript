@@ -11,8 +11,11 @@ function updateTotalPrice() {
     const productPrice = parseFloat(productSelector.value);
     const quantity = parseInt(quantityInput.value);
     const totalPrice = productPrice * quantity;
-    
+    if (quantity < 0){
+        totalPriceElement.textContent = "Invalid";
+    } else {
     totalPriceElement.textContent = totalPrice.toFixed(2);
+    }
 }
 
 //2. Add Event Listener for Product Selection
